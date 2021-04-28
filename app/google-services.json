@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "357166199457",
+    "project_id": "yelper-helper",
+    "storage_bucket": "yelper-helper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357166199457:android:dc2b87dd68da66db2a36e0",
+        "android_client_info": {
+          "package_name": "com.example.yelperhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357166199457-6o1k5j64vbmq0rqe7bhfefbovmd4etuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3e_iQ0zneDH82FR89D0BELWRvUYh4suA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357166199457-6o1k5j64vbmq0rqe7bhfefbovmd4etuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
