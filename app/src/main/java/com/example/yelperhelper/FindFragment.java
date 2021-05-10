@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,7 @@ public class FindFragment extends Fragment {
 
     private RecyclerView recyclverView_business;
     private List<Business> businesses;
+    private FindAdapter adapter;
 
     @Nullable
     @Override
@@ -39,25 +41,20 @@ public class FindFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         recyclverView_business = view.findViewById(R.id.recyclerView_business);
+        //adapter = new FindAdapter(businesses);
+        //recyclverView_business.setLayoutManager(new LinearLayoutManager(getActivity()));
+        //recyclverView_business.setAdapter(adapter);
+
+
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("yelper-helper-default=rtdb");
-        mDatabase.addValueEventListener(new ValueEventListener() {
+        mDatabase.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot item_snapshot : snapshot.getChildren()){
-                    DataSnapshot info = item_snapshot.child("information");
-                    String name = info.child("name").getValue().toString();
-                    Log.e("name", name);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                Log.d("firebase", String.valueOf(task.getResult().getValue()));
 
             }
         });
-
 
 
 
