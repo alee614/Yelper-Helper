@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "357166199457",
+    "firebase_url": "https://yelper-helper-default-rtdb.firebaseio.com",
     "project_id": "yelper-helper",
     "storage_bucket": "yelper-helper.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "357166199457-eru937dus4idevq4pts1nism7a65m49k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yelperhelper",
+            "certificate_hash": "e8a84c0c62ee9e01e24168afda4e6df87b361ccd"
+          }
+        },
         {
           "client_id": "357166199457-6o1k5j64vbmq0rqe7bhfefbovmd4etuj.apps.googleusercontent.com",
           "client_type": 3

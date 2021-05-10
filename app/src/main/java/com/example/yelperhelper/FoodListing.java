@@ -11,4 +11,7 @@ public class FoodListing {
     @ColumnInfo(name = "food_name")
     public String food_name;
 
+    public FoodListing(String food_name){
+        this.food_name = food_name;
+    }
 }
