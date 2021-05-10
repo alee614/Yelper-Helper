@@ -51,9 +51,6 @@ public class AddFragment extends Fragment {
 
     private ReviewViewModel reviewViewModel;
 
-    private static final int REQUEST_IMAGE_CAPTURE = 1;
-    private Bitmap bitmap;
-
     private static int CAMERA_PERMISSION_CODE = 1;
     private static int CAMERA = 2;
     private static int STORAGE_PERMISSION_CODE = 23;

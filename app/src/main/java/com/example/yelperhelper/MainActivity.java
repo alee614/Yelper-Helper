@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 
@@ -15,12 +16,15 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     public TabLayout tabLayout;
+    private ReviewViewModel reviewViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tabLayout = findViewById(R.id.tabLayout);
+        reviewViewModel = new ViewModelProvider(this).get(ReviewViewModel.class);
 
         loadFragment(new MyReviewsFragment(), R.id.fragContainerView);
 
@@ -34,11 +38,19 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         // add fragment
                         loadFragment(new AddFragment(), R.id.fragContainerView);
+
                         break;
                     case 2:
                         // search fragment
                         // have to be logged in to see this info
-                        loadFragment(new FindFragment(), R.id.fragContainerView);
+
+                         if (reviewViewModel.userToken == null){
+                         loadFragment(new ErrorFragment(), R.id.fragContainerView);
+                         }
+                         else{
+                         loadFragment(new FindFragment(), R.id.fragContainerView);
+                         }
+                         break;
                     case 3:
                         // user page
                         // let's you log in
